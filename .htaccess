@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /apps-main/
+RewriteBase /sabtu/
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

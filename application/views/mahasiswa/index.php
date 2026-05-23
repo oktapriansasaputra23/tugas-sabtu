@@ -7,6 +7,10 @@
             <button class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">
                 Tambah Mahasiswa
             </button>
+
+            <button class="btn btn-success" data-toggle="modal" data-target="#modalImport">
+Import Excel
+</button>
         </div>
         <div class="card-body">
             <table class="table table-striped w-100 dt-responsive nowrap" id="dataTable">
@@ -16,6 +20,8 @@
                         <th>NIM</th>
                         <th>Nama</th>
                         <th>Jurusan</th>
+                        <th>Mata Kuliah</th>
+                        <th>Kelas</th>
                         <th>Aksi</th>
                     </tr>
             </thead>
@@ -26,9 +32,11 @@
                     <td><?= $m->nim ?></td>
                     <td><?= $m->nama_mahasiswa ?></td>
                     <td><?= $m->jurusan ?></td>
+                    <td><?= $m->matakuliah ?></td>
+                    <td><?= $m->kelas ?></td>
                     <td>
                         <button class="btn btn-warning btn-sm"
-                            onclick="editMahasiswa('<?= $m->id ?>','<?= $m->nim ?>','<?= $m->nama_mahasiswa ?>','<?= $m->jurusan ?>')">
+                            onclick="editMahasiswa('<?= $m->id ?>','<?= $m->nim ?>','<?= $m->nama_mahasiswa ?>','<?= $m->jurusan ?>','<?= $m->matakuliah ?>','<?= $m->kelas ?>')">
                             Edit
                         </button>
                         <a href="<?= base_url('mahasiswa/delete/'.$m->id) ?>"
@@ -54,7 +62,9 @@
         <div class="modal-body">
             <input type="text" name="nim" class="form-control mb-2" placeholder="NIM" required>
             <input type="text" name="nama" class="form-control mb-2" placeholder="Nama Mahasiswa" required>
-            <input type="text" name="jurusan" class="form-control" placeholder="Jurusan" required>
+            <input type="text" name="jurusan" class="form-control mb-2" placeholder="Jurusan" required>
+            <input type="text" name="matakuliah" class="form-control mb-2" placeholder="Matakuliah" required>
+            <input type="text" name="kelas" class="form-control mb-2" placeholder="kelas" required>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary">Simpan</button>
@@ -63,7 +73,7 @@
     </div>
   </div>
 </div>
-
+<?php $this->load->view('mahasiswa/modal_import') ?>
 <script>
 $(function() {
     $('#dataTable').DataTable({

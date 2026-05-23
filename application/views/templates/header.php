@@ -90,7 +90,7 @@
               </a>
           </li> -->
 
-           <!-- <li class="nav-item">
+           <li class="nav-item">
               <a href="<?= site_url('mahasiswa') ?>" class="nav-link">
                   <i class="nav-icon fas fa-boxes"></i>
                   <p>Data Mahasiswa</p>
@@ -103,7 +103,7 @@
                   <i class="nav-icon fas fa-exchange-alt"></i>
                   <p>Penilaian</p>
               </a>
-          </li> -->
+          </li>
 
        
 
